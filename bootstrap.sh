@@ -14,7 +14,7 @@ if [ "$SCRIPTPATH" = "/home" ] ; then
    fi
   
   mkdir -p $HOME/rpmbuild/{BUILD,RPMS,SOURCES,SRPMS}
- ln -sf $SCRIPTPATHSPECS $HOME/rpmbuild/SPECS
+ ln -sf $SCRIPTPATH/SPECS $HOME/rpmbuild/SPECS
 echo '%_topdir '$HOME'/rpmbuild' > $HOME/.rpmmacros
 cd $HOME/rpmbuild/SOURCES
 wget http://pgfoundry.org/frs/download.php/3814/master.tar.gz
