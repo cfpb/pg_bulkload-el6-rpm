@@ -39,7 +39,7 @@ Build RPM on server
 Please note that "pg_dir" must be accessible in your environment path
 
 Installing the RPM 
-Install the built RPM by running "sudo yum install RPMS/x86_64/pg_bulkload-3.1.5.el6.x86_64.rpm"
+Install the built RPM by running "sudo yum install RPMS/x86_64/pg_bulkload-3.1.7-1.el6.x86_64.rpm"
 
 ## Configuration
 
