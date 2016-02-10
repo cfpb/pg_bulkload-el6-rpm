@@ -54,17 +54,17 @@ make
 ###############################################################################################################################################################
 %files
 #/usr/lib/debug/
-#/usr/pgsql-9.4/
+#%{pg_dir}/
 
 
-/usr/pgsql-9.4/bin/pg_bulkload
-/usr/pgsql-9.4/bin/postgresql
-/usr/pgsql-9.4/lib/pg_bulkload.so
-/usr/pgsql-9.4/lib/pg_timestamp.so
-/usr/pgsql-9.4/share/contrib/pg_timestamp.sql
-/usr/pgsql-9.4/share/contrib/uninstall_pg_timestamp.sql
-/usr/pgsql-9.4/share/extension/pg_bulkload--1.0.sql
-/usr/pgsql-9.4/share/extension/pg_bulkload--unpackaged--1.0.sql
-/usr/pgsql-9.4/share/extension/pg_bulkload.control
-/usr/pgsql-9.4/share/extension/pg_bulkload.sql
-/usr/pgsql-9.4/share/extension/uninstall_pg_bulkload.sql
+%{pg_dir}/bin/pg_bulkload
+%{pg_dir}/bin/postgresql
+%{pg_dir}/lib/pg_bulkload.so
+%{pg_dir}/lib/pg_timestamp.so
+%{pg_dir}/share/contrib/pg_timestamp.sql
+%{pg_dir}/share/contrib/uninstall_pg_timestamp.sql
+%{pg_dir}/share/extension/pg_bulkload--1.0.sql
+%{pg_dir}/share/extension/pg_bulkload--unpackaged--1.0.sql
+%{pg_dir}/share/extension/pg_bulkload.control
+%{pg_dir}/share/extension/pg_bulkload.sql
+%{pg_dir}/share/extension/uninstall_pg_bulkload.sql
