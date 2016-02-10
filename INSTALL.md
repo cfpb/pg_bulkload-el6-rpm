@@ -18,6 +18,6 @@ Build RPM on server
 
 Installing the RPM 
 
-Install the built RPM by running "sudo yum install RPMS/x86_64/pg_bulkload-1.3.1-1.el6.x86_64.rpm"
+Install the built RPM by running "sudo yum install RPMS/x86_64/pg_bulkload-3.1.7-1.el6.x86_64.rpm"
 
 
