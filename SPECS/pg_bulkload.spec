@@ -1,7 +1,7 @@
 %global _version 3.1.7
 
 
-Name:           pg_bulkload
+Name:           pg_bulkload%{suffix}
 Version:        %{_version}
 Release:        1%{?dist}
 Summary: 	High speed data load utility for PostgreSQL
@@ -11,8 +11,8 @@ License:        pg_bulkload is released under the PostgreSQL License, a liberal 
 URL:		http://pgfoundry.org/projects/pgbulkload/
 Source:		http://pgfoundry.org/frs/download.php/3814/master.tar.gz
 
-Obsoletes:      pg_bulkload <= 3.1.6
-Provides:       pg_bulkload = 3.1.7
+Obsoletes:      pg_bulkload%{suffix} <= 3.1.6
+Provides:       pg_bulkload%{suffix} => 3.1.7
 
 
 %description
@@ -43,28 +43,21 @@ BuildRoot: %(mktemp -ud %{_tmppath}/build/%{name}-%{version}-%{release}-XXXXXX)
 ###############################################################################################################################################################
 %build
 
-make
-
-
-%make_install 
-
-
-
+#make
 
 ###############################################################################################################################################################
+%install
+mkdir -p %{buildroot}/etc/profile.d
+echo "export PATH=$PATH:%{pg_dir}/bin/" >> %{buildroot}/etc/profile.d/pg_bulkload.sh
+echo "export USE_PGXS=1" >> %{buildroot}/etc/profile.d/pg_bulkload.sh
+source %{buildroot}/etc/profile.d/pg_bulkload.sh
+
+###%make_install
+
+###############################################################################################################################################################
+%clean
+# Sanity check before removal of old buildroot files
+[ -d "%{buildroot}" -a "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+###############################################################################################################################################################
 %files
-#/usr/lib/debug/
-#%{pg_dir}/
-
-
-%{pg_dir}/bin/pg_bulkload
-%{pg_dir}/bin/postgresql
-%{pg_dir}/lib/pg_bulkload.so
-%{pg_dir}/lib/pg_timestamp.so
-%{pg_dir}/share/contrib/pg_timestamp.sql
-%{pg_dir}/share/contrib/uninstall_pg_timestamp.sql
-%{pg_dir}/share/extension/pg_bulkload--1.0.sql
-%{pg_dir}/share/extension/pg_bulkload--unpackaged--1.0.sql
-%{pg_dir}/share/extension/pg_bulkload.control
-%{pg_dir}/share/extension/pg_bulkload.sql
-%{pg_dir}/share/extension/uninstall_pg_bulkload.sql
+/etc/profile.d/pg_bulkload.sh
