@@ -1,4 +1,4 @@
-# PG_BULKLOAD RPM built for RHEL 6.5
+# PG_BULKLOAD RPM built for RHEL 6.x
 
 **Description**:
 
