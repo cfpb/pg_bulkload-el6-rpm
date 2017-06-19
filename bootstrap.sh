@@ -8,7 +8,7 @@ SCRIPTPATH=$(dirname "$SCRIPT")
     fi
   
 mkdir -p $HOME/rpmbuild/{BUILD,RPMS,SOURCES,SRPMS}
-n -sf $SCRIPTPATH/SPECS $HOME/rpmbuild/SPECS
+ln -sf $SCRIPTPATH/SPECS $HOME/rpmbuild/SPECS
 echo '%_topdir '$HOME'/rpmbuild' > $HOME/.rpmmacros
 cd $HOME/rpmbuild/SOURCES
 wget https://github.com/ossc-db/pg_bulkload/archive/VERSION3_1_9.tar.gz
